@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased font-sans;
+    min-height: 100vh;
+  }
+}
+
+/* ==========================================================================
+   Campus Chronicles Editorial Rich-Text Typography
+   Applies to Tiptap editor (.tiptap) and rendered articles (.prose)
+   ========================================================================== */
+
+.tiptap,
+.prose {
+  color: #1e293b; /* slate-800 */
+}
+
+/* Headings */
+.tiptap h1,
+.prose h1 {
+  display: block;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 2.5rem;
+  font-weight: 800;
+  color: #0f172a; /* slate-900 */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.tiptap h2,
+.prose h2 {
+  display: block;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.625rem; /* text-2xl */
+  line-height: 2rem;
+  font-weight: 700;
+  color: #0f172a; /* slate-900 */
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.015em;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.35rem;
+}
+
+.tiptap h3,
+.prose h3 {
+  display: block;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.25rem; /* text-xl */
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #1e293b; /* slate-800 */
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Paragraphs */
+.tiptap p,
+.prose p {
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.8;
+}
+
+/* Unordered Lists */
+.tiptap ul,
+.prose ul {
+  display: block;
+  list-style-type: disc !important;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+  padding-left: 1.75rem !important;
+}
+
+/* Ordered Lists */
+.tiptap ol,
+.prose ol {
+  display: block;
+  list-style-type: decimal !important;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+  padding-left: 1.75rem !important;
+}
+
+/* List Items */
+.tiptap li,
+.prose li {
+  display: list-item !important;
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.75;
+}
+
+.tiptap li p,
+.prose li p {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  display: inline;
+}
+
+/* Nested lists */
+.tiptap ul ul,
+.prose ul ul {
+  list-style-type: circle !important;
+}
+
+.tiptap ol ol,
+.prose ol ol {
+  list-style-type: lower-latin !important;
+}
+
+/* Blockquotes */
+.tiptap blockquote,
+.prose blockquote {
+  display: block;
+  border-left: 4px solid #6366f1; /* indigo-500 */
+  background-color: #f8fafc; /* slate-50 */
+  padding: 0.85rem 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-style: italic;
+  color: #334155; /* slate-700 */
+}
+
+.tiptap blockquote p,
+.prose blockquote p {
+  margin: 0;
+  color: inherit;
+}
+
+/* Hyperlinks */
+.tiptap a,
+.prose a {
+  color: #4f46e5 !important; /* indigo-600 */
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.tiptap a:hover,
+.prose a:hover {
+  color: #3730a3 !important; /* indigo-800 */
+}
+
+/* Inline Code */
+.tiptap code,
+.prose code {
+  background-color: #f1f5f9; /* slate-100 */
+  color: #0f172a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.375rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+/* Code Blocks */
+.tiptap pre,
+.prose pre {
+  background-color: #0f172a; /* slate-900 */
+  color: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.tiptap pre code,
+.prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Horizontal Rule */
+.tiptap hr,
+.prose hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Editor Specific Focus Outline */
+.tiptap:focus {
+  outline: none;
+}
+
+/* Tiptap Placeholder Styling */
+.tiptap p.is-editor-empty:first-child::before,
+.tiptap p.is-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #94a3b8; /* slate-400 */
+  pointer-events: none;
+  height: 0;
+}
